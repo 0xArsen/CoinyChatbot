@@ -1,0 +1,5 @@
+GET https://www.coinbase.com/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URL&state=SECURE_RANDOM&scope=wallet:accounts:read
+
+GET https://www.coinbase.com/oauth/authorize?response_type=code&client_id=c4c8821329affe9e4eefe6c134c889a0a1047b0a2b8a04b2fd8c3b3d853cb73f&scope=wallet:accounts:read&scope=wallet:user:email
+
+client_id = c4c8821329affe9e4eefe6c134c889a0a1047b0a2b8a04b2fd8c3b3d853cb73f
