@@ -3,3 +3,28 @@ GET https://www.coinbase.com/oauth/authorize?response_type=code&client_id=YOUR_C
 GET https://www.coinbase.com/oauth/authorize?response_type=code&client_id=c4c8821329affe9e4eefe6c134c889a0a1047b0a2b8a04b2fd8c3b3d853cb73f&scope=wallet:accounts:read&scope=wallet:user:email
 
 client_id = c4c8821329affe9e4eefe6c134c889a0a1047b0a2b8a04b2fd8c3b3d853cb73f
+client_secret = b486e8e52d5f895dfe0246933b23d6eb25d7684de83f58610728a12ce0607dac
+
+
+
+curl https://api.coinbase.com/oauth/token \
+  -X POST \
+  -d 'grant_type=refresh_token&
+      client_id=YOUR_CLIENT_ID&
+      client_secret=YOUR_CLIENT_SECRET&
+      refresh_token=REFRESH_TOKEN'
+
+code=87455f6a471701c2df9cdf7bcc296dcc2b813b94671b297ca642930ff7d71cea
+
+      curl https://api.coinbase.com/oauth/token \
+        -X POST \
+        -d 'grant_type=authorization_code&code=87455f6a471701c2df9cdf7bcc296dcc2b813b94671b297ca642930ff7d71cea&client_id=c4c8821329affe9e4eefe6c134c889a0a1047b0a2b8a04b2fd8c3b3d853cb73f&client_secret=b486e8e52d5f895dfe0246933b23d6eb25d7684de83f58610728a12ce0607dac&redirect_uri=https://q8bcq3luah.execute-api.us-east-1.amazonaws.com/004RedirectStage'
+
+
+
+
+{"access_token":"f1704267f73769544ebd53ae998683e17a5a1c4f160d151356d7d0cf9302fd4f",
+"token_type":"bearer",
+"expires_in":7200,
+"refresh_token":"c0197aaf38c212c3785dd59a48203e4c1d0e7dbb669ab3a2d906e2635b5ad48c",
+"scope":"wallet:user:email"}
