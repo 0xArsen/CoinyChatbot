@@ -14,7 +14,7 @@ def build_response(message):
 	
 def lambda_handler(event, context):
     #Get top post and return it back to user'
-    req = urllib2.Request(url='https://www.reddit.com/r/Crypto_Currency_News/new.json?count=0',headers={'User-Agent':'CoinyBot (by /u/pandaxchris'})
+    req = urllib2.Request(url='https://www.reddit.com/r/Crypto_Currency_News/new.json?count=0',headers={'User-Agent':'CoinyBot'})
     res= urllib2.urlopen(req)   #go through with GET request
     content = res.read()    #Try to read first line
     #Parse into JSON format
