@@ -12,14 +12,15 @@ client = OAuthClient(access_token, refresh_token)
 
 def main():
     redirect_uri = 'https://q8bcq3luah.execute-api.us-east-1.amazonaws.com/004RedirectStage'
-    url = "https://api.coinbase.com/oauth/token/"
-    payload = {'grant_type' : 'authorization_code',
+    url = "https://api.coinbase.com/oauth/token"
+    payload = {
+        'grant_type' : 'authorization_code',
         'code' : code,
         'client_id' : CLIENT_ID,
         'client_secret' : CLIENT_SECRET,
         'redirect_uri' : redirect_uri
         }
-
+    '''
     new_payload = "grant_type=authorization_code&code=" +  code + "&client_id=" + CLIENT_ID + "&client_secret=" +  CLIENT_SECRET + "&redirect_uri=" + redirect_uri
     payload_json = json.dumps(payload)
     contentType = 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -30,7 +31,14 @@ def main():
     response = urllib2.urlopen(req)
     result = response.read()
     print result
-    
+    '''
+
+    res = \
+        requests.post(url, data=payload)
+
+    print res.status_code
+    print json.loads(res.content.decode())
+
 
 
 '''
