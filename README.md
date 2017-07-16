@@ -28,4 +28,4 @@ The chatbot is deployed on AWS Lex , AWS Lambda and Twilio. This repo contains t
 # Sample images of bot in action
 
 Spot price request:
-![alt text](https://github.com/arsenakishev/AWSChatbot2017/images/spotPrice.png "Spot prices")
+![Spot Price](https://github.com/arsenakishev/AWSChatbot2017/images/spotPrice.png "Spot prices")
