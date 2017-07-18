@@ -23,7 +23,9 @@ def lambda_handler(event, context):
 	
 	if (event['currentIntent']['slots']['crypto'] == None) :
 		return build_response ("Please specify the cryptocurrency in proper notation, eg. BTC or btc")
-	
+	if (event['currentIntent']['slots']['crypto'] != None and str(event['currentIntent']['slots']['crypto']) not in ['btc','bitcoin','ethereum','eth','litecoin','ltc']) :
+	    return build_response ("The crypto currency you have selected is invalid. Please try again.")
+		
 	if (event['currentIntent']['slots']['curr'] != None and len(str(event['currentIntent']['slots']['curr']))>3) :
 		return build_response ("Please specify the currency in proper notation, eg. USD or usd")
 	

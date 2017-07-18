@@ -21,10 +21,10 @@ def lambda_handler(event, context):
 	cur_val = ""
 	cur_cur = ""
 	
-	if (event['currentIntent']['slots']['crypto'] == None) :
+	if (event['currentIntent']['slots']['crypto'] == "None") :
 		return build_response ("Please specify the cryptocurrency in proper notation, eg. BTC or btc")
 	
-	if (event['currentIntent']['slots']['curr'] != None and len(str(event['currentIntent']['slots']['curr']))>3) :
+	if (event['currentIntent']['slots']['curr'] != "None" and len(str(event['currentIntent']['slots']['curr']))>3) :
 		return build_response ("Please specify the currency in proper notation, eg. USD or usd")
 		
 	if (str(event['currentIntent']['slots']['crypto']).lower() == "btc" or str(event['currentIntent']['slots']['crypto']).lower() == "bitcoin") :
@@ -35,6 +35,8 @@ def lambda_handler(event, context):
 		cur_val = "LTC"
 		
 	cur_cur = str(event['currentIntent']['slots']['curr']).upper()
+	if (len(cur_val) == 0) :
+	    return build_response ("The crypto currency you have selected is invalid. Please try again.")
 	
 	url = "https://api.coinbase.com/v2/exchange-rates?currency=" + cur_val
 	
