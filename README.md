@@ -3,6 +3,8 @@ ___
 
 ##  What is Coiny?
 Coiny is a serverless chatbot built for the AWS 2017 Serverless Chatbot Competition. Any user can text Coiny using their mobile device and they will receive a response to any of their queries about bitcoin or ethereum.
+
+### Watch the bot in action: vimeo.com/225946608
 ___
 ## What can Coiny do?
 Users can ask price related and reddit post related questions. Information related to price is gathered through the Coinbase API and information about reddit posts is gathered through reddit.com
